@@ -107,7 +107,7 @@ input {
   border-right: none;
   border-bottom: 1px solid grey;
   width: 70%;
-  margin: auto;
+  margin: 20px auto;
 }
 
 input:focus {
