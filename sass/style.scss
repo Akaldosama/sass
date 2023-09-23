@@ -1,0 +1,116 @@
+body {
+    background-color: aliceblue;
+}
+
+
+
+
+
+@mixin btn_things($padding, $background, $color, $border_radius, $f_size) {
+    padding: $padding;
+    background-color: $background;
+    color: $color;
+    border-radius: $border_radius;
+    font-size: $f_size;
+}
+
+%btn_for_all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: 20px auto;
+    padding: 50px 10px;
+    background-color: rgb(219, 226, 225);
+}
+
+
+
+.box {
+    @extend %btn_for_all;
+}
+
+.parent {
+    @extend %btn_for_all;
+}
+
+button {
+    border-style: none;
+}
+
+.btn_0 {
+    margin: 20px;
+    @include btn_things(12px 20px, rgb(56, 145, 153), white, 50%, 30px);
+}
+
+.btn_1 {
+    @include btn_things(12px 40px, transparent, rgb(56, 145, 153), 5px, 20px);
+}
+
+.btn_2 {
+    @include btn_things(12px 40px, transparent, rgb(56, 145, 153), 5px, 20px);
+}
+
+.btn_3 {
+    @include btn_things(12px 20px, transparent, rgb(56, 145, 153), 5px, 20px);
+}
+
+.btn_4 {
+    @include btn_things(12px 20px, transparent, rgb(56, 145, 153), 5px, 20px);
+}
+
+.btn_5 {
+    @include btn_things(12px 20px, rgba(255, 255, 255, 0.755), rgb(56, 145, 153), 5px, 20px);
+}
+
+.btn_6 {
+    @include btn_things(12px 20px, rgb(56, 145, 153), white, 5px, 20px);
+}
+
+.btn_7 {
+    @include btn_things(12px 20px, transparent, rgb(56, 145, 153), 5px, 20px);
+}
+
+.btn_8 {
+    @include btn_things(12px 20px, rgb(186, 173, 173), rgb(56, 145, 153), 5px, 20px);
+}
+
+
+
+
+
+%child_things {
+    width: 500px;
+    margin: auto;
+    padding: 12px;
+    display: grid;
+    place-items: center;
+
+}
+
+%input_things {
+    background-color: transparent;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid grey;
+    width: 70%;
+    margin: auto
+}
+
+.child{
+    @extend %child_things;
+}
+
+input:focus {
+    border-bottom: 2px solid blue;
+
+}
+
+input {
+    @extend %input_things;
+
+}
